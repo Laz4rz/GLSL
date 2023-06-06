@@ -1,0 +1,30 @@
+void mainImage( out vec4 fragColor, in vec2 fragCoord )
+{
+    // Normalized pixel coordinates (from 0 to 1)
+    vec2 uv = fragCoord/iResolution.xy;
+    
+    // Transforming the coordinate system
+    uv = uv * 2. - 1.;
+    
+    // Applying resolution scaling factor
+    uv.x *= iResolution.x / iResolution.y;
+
+    // Length
+    float d = length(uv);
+    d -= 0.5;
+    d = abs(d);
+    d = sin(20. * d + 2.*iTime);
+    d = smoothstep(0., 0.95, d);
+    
+    // Neon look
+    d = 0.5 / d;
+    
+    // Time varying pixel color
+    vec3 gradient_xy = vec3(d, d, d);
+
+    vec3 col = gradient_xy;
+
+    // Output to screen
+    fragColor = vec4(col,1.0);
+}
+
