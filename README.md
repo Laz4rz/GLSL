@@ -36,4 +36,8 @@ $ sudo apt-get install libglfw3
 $ sudo apt-get install libglfw3-dev
 ```
 
+### Building binaries
 
+```
+$ g++ -pthread -o filename filename.c -lglfw -lGLU -lGL -lXrandr -lXxf86vm -lXi -lXinerama -lX11 -lrt -ldl
+```
