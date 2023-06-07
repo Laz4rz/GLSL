@@ -18,3 +18,22 @@ $ sudo apt-get install xfce4
 add `export DISPLAY=:0.0` to .bashrc
 
 run startxfce4 with sudo
+
+### Better way
+
+- XFCE for WSL
+```
+$ sudo apt-get install xfce4
+```
+
+add `export DISPLAY=:0.0` to .bashrc
+
+run startxfce4 with sudo
+
+- GLAD + GLSL
+```
+$ sudo apt-get install libglfw3
+$ sudo apt-get install libglfw3-dev
+```
+
+
